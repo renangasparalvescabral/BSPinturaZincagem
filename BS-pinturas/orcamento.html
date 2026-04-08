@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Orçamento | BS Pinturas & Zincagem</title>
+
+  <meta name="description" content="Solicite seu orçamento de jateamento, pintura eletrostática, pintura epóxi ou revestimento em teflon. Resposta em até 24h.">
+  <meta name="keywords" content="orçamento, cotação, pintura industrial, jateamento">
+  <meta name="author" content="BS Pinturas">
+
+  <meta property="og:title" content="Solicitar Orçamento | BS Pinturas & Zincagem">
+  <meta property="og:description" content="Receba seu orçamento em até 24h.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only">Pular para conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-wrapper">
+
+        <a href="index.html" class="logo" aria-label="BS Pinturas - Página inicial">
+          <img src="assets/images/logo/logo.svg" alt="BS Pinturas & Zincagem" width="180" height="50">
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+            <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+            <li><a href="galeria.html" class="nav-link">Galeria</a></li>
+            <li><a href="orcamento.html" class="nav-link active" aria-current="page">Orçamento</a></li>
+            <li><a href="contato.html" class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+
+        <a href="https://wa.me/551921444096" class="btn btn-primary header-cta" target="_blank" rel="noopener noreferrer">
+          WhatsApp
+        </a>
+
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-hero" aria-labelledby="orcamento-title">
+      <div class="container">
+        <div class="page-hero-content">
+          <span class="page-tag">Orçamento</span>
+          <h1 id="orcamento-title" class="page-title">Solicite seu <span class="text-accent">Orçamento</span></h1>
+          <p class="page-description">
+            Preencha o formulário abaixo. Responderemos em até 24h úteis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="form-title">
+      <div class="container">
+        <div class="orcamento-wrapper">
+
+          <div class="orcamento-info">
+            <h2 id="form-title" class="section-title">Informações Importantes</h2>
+
+            <div class="info-card">
+              <h3 class="info-title">📋 O que precisamos saber?</h3>
+              <ul class="info-list">
+                <li>Tipo de material da peça (ferro, aço, alumínio)</li>
+                <li>Dimensões aproximadas</li>
+                <li>Quantidade</li>
+                <li>Serviço desejado</li>
+                <li>Cor ou acabamento (se aplicável)</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3 class="info-title">⏱️ Prazo de Resposta</h3>
+              <p>Analisamos sua solicitação e retornamos em até <strong>24 horas úteis</strong> com o orçamento detalhado.</p>
+            </div>
+
+            <div class="info-card">
+              <h3 class="info-title">📞 Prefere falar direto?</h3>
+              <p>Ligue ou envie mensagem pelo WhatsApp:</p>
+              <a href="https://wa.me/551921444096" class="info-whatsapp" target="_blank" rel="noopener noreferrer">
+                +55 19 2144-4096
+              </a>
+            </div>
+          </div>
+
+          <div class="orcamento-form-wrapper">
+            <form class="orcamento-form" id="form-orcamento" action="#" method="POST" novalidate>
+
+              <fieldset class="form-section">
+                <legend class="form-legend">Dados de Contato</legend>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="nome" class="form-label">
+                      Nome completo <span class="required" aria-label="obrigatório">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="nome"
+                      name="nome"
+                      class="form-input"
+                      placeholder="Seu nome"
+                      required
+                      autocomplete="name"
+                    >
+                    <span class="error-message" id="error-nome"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="empresa" class="form-label">
+                      Empresa
+                    </label>
+                    <input
+                      type="text"
+                      id="empresa"
+                      name="empresa"
+                      class="form-input"
+                      placeholder="Nome da empresa"
+                      autocomplete="organization"
+                    >
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="telefone" class="form-label">
+                      Telefone / WhatsApp <span class="required" aria-label="obrigatório">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="telefone"
+                      name="telefone"
+                      class="form-input"
+                      placeholder="(19) 99999-9999"
+                      required
+                      autocomplete="tel"
+                    >
+                    <span class="error-message" id="error-telefone"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email" class="form-label">
+                      E-mail <span class="required" aria-label="obrigatório">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-input"
+                      placeholder="seu@email.com"
+                      required
+                      autocomplete="email"
+                    >
+                    <span class="error-message" id="error-email"></span>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend class="form-legend">Sobre o Serviço</legend>
+
+                <div class="form-group">
+                  <label for="tipo-servico" class="form-label">
+                    Tipo de Serviço <span class="required" aria-label="obrigatório">*</span>
+                  </label>
+                  <select id="tipo-servico" name="tipo-servico" class="form-select" required>
+                    <option value="" disabled selected>Selecione o serviço</option>
+                    <option value="jateamento">Jateamento</option>
+                    <option value="pintura-eletrostatica">Pintura Eletrostática</option>
+                    <option value="pintura-liquida">Pintura Líquida Epóxi/PU</option>
+                    <option value="revestimento-teflon">Revestimento em Teflon</option>
+                    <option value="combinado">Combinação de serviços</option>
+                    <option value="outro">Outro / Não sei</option>
+                  </select>
+                  <span class="error-message" id="error-tipo-servico"></span>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="quantidade" class="form-label">
+                      Quantidade aproximada <span class="required" aria-label="obrigatório">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="quantidade"
+                      name="quantidade"
+                      class="form-input"
+                      placeholder="Ex: 50 peças, 100 kg..."
+                      required
+                    >
+                    <span class="error-message" id="error-quantidade"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="prazo" class="form-label">
+                      Prazo desejado
+                    </label>
+                    <select id="prazo" name="prazo" class="form-select">
+                      <option value="" selected>Selecione</option>
+                      <option value="normal">Normal</option>
+                      <option value="urgente">Urgente</option>
+                      <option value="flexivel">Flexível</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="descricao" class="form-label">
+                    Descrição das Peças <span class="required" aria-label="obrigatório">*</span>
+                  </label>
+                  <textarea
+                    id="descricao"
+                    name="descricao"
+                    class="form-textarea"
+                    rows="5"
+                    placeholder="Descreva as peças: material, dimensões, estado atual, serviço desejado, cor preferida..."
+                    required
+                  ></textarea>
+                  <span class="error-message" id="error-descricao"></span>
+                </div>
+
+                <div class="form-group form-checkbox">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="anexos" value="sim">
+                    <span class="checkmark"></span>
+                    Tenho fotos para anexar (será solicitado por e-mail/WhatsApp)
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Enviar Solicitação
+                </button>
+                <button type="button" class="btn btn-outline whatsapp-btn" data-action="whatsapp">
+                  Enviar pelo WhatsApp
+                </button>
+              </div>
+
+              <div class="form-success" id="form-success" role="status" aria-live="polite" hidden>
+                <p>✅ Solicitação enviada com sucesso! Entraremos em contato em breve.</p>
+              </div>
+
+              <div class="form-error" id="form-error" role="alert" hidden>
+                <p>❌ Ocorreu um erro. Por favor, tente novamente ou entre em contato pelo WhatsApp.</p>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <img src="assets/images/logo/logo-white.svg" alt="BS Pinturas" width="150" height="40">
+          <p class="footer-description">
+            Tratamento de superfícies industriais com qualidade
+            e compromisso desde 2014.
+          </p>
+          <div class="footer-social">
+            <a href="https://instagram.com/bs.pinturas_br" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Links rápidos">
+          <h3 class="footer-title">Links Rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="orcamento.html">Orçamento</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav" aria-label="Serviços">
+          <h3 class="footer-title">Serviços</h3>
+          <ul class="footer-links">
+            <li><a href="servicos.html#jateamento">Jateamento</a></li>
+            <li><a href="servicos.html#pintura-eletrostatica">Pintura Eletrostática</a></li>
+            <li><a href="servicos.html#pintura-liquida">Pintura Líquida Epóxi/PU</a></li>
+            <li><a href="servicos.html#revestimento-teflon">Revestimento em Teflon</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3 class="footer-title">Contato</h3>
+          <address class="footer-address">
+            <p>Rua Milton Kilner Pio, 530</p>
+            <p>Pq. Industrial Bandeirantes</p>
+            <p>Santa Bárbara d'Oeste - SP</p>
+            <p>CEP: 13457-176</p>
+          </address>
+          <ul class="footer-contacts">
+            <li>
+              <a href="https://wa.me/551921444096" target="_blank" rel="noopener">
+                WhatsApp: +55 19 2144-4096
+              </a>
+            </li>
+            <li>
+              <a href="mailto:adm@bspinturas.com.br">
+                adm@bspinturas.com.br
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 BS Pinturas & Zincagem. Todos os direitos reservados.</p>
+        <p class="footer-credits">Desenvolvido com assistência de Claude</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/551921444096" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.15-.174.198-.298.298-.497.099-.198.05-.371-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.689 9.689 0 01-4.551-1.125l-.326-.186-3.388.888.907-3.299-.197-.346A9.689 9.689 0 012.473 12.1 9.697 9.697 0 0112.099 2.473c2.576 0 4.998 1.003 6.819 2.822a9.623 9.623 0 012.822 6.82c-.002 5.353-4.357 9.707-9.708 9.707M20.1 3.89A11.626 11.626 0 0012.099 0C5.392 0 .055 5.338.055 12.045c0 2.12.556 4.192 1.61 6.015l-1.71 6.242 6.404-1.678a11.9 11.9 0 005.737 1.466h.004c6.706 0 12.046-5.34 12.046-12.046 0-3.218-1.254-6.247-3.525-8.516l.024-.024z"/>
+    </svg>
+  </a>
+
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/orcamento.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
