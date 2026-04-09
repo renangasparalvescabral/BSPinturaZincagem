@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" width="360" height="80" role="img">
+  <title>BS Pinturas &amp; Zincagem</title>
+  <desc>Logo BS Pinturas e Zincagem - versão footer</desc>
+
+  <!-- Ícone: quadrado vermelho com BS -->
+  <rect x="0" y="0" width="70" height="70" fill="#B22222" rx="10"/>
+  <text x="35" y="50" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="32" font-weight="900" fill="#FFFFFF">BS</text>
+
+  <!-- Linha divisória vertical -->
+  <line x1="86" y1="4" x2="86" y2="66" stroke="#D4860A" stroke-width="2"/>
+
+  <!-- Texto BS PINTURAS -->
+  <text x="100" y="44" text-anchor="start" font-family="Arial Narrow, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF" letter-spacing="2">BS PINTURAS</text>
+
+  <!-- Texto & ZINCAGEM -->
+  <text x="102" y="64" text-anchor="start" font-family="Arial Narrow, sans-serif" font-size="14" font-weight="400" fill="#D4860A" letter-spacing="5">&amp; ZINCAGEM</text>
+
+</svg>

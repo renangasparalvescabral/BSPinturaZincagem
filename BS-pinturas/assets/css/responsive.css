@@ -1,0 +1,292 @@
+/* ========================================
+   BS Pinturas - Estilos Responsivos
+   ======================================== */
+
+/* ----------------------------------------
+   Tablets (1024px)
+   ---------------------------------------- */
+@media (max-width: 1024px) {
+  /* Grid de orçamento: mantém 2 colunas mas reduz gap */
+  .orcamento-wrapper {
+    gap: var(--space-xl);
+  }
+
+  /* Grid de contato: mantém 2 colunas */
+  .contato-wrapper {
+    gap: var(--space-xl);
+  }
+
+  /* Grid sobre: mantém 2 colunas */
+  .sobre-grid {
+    gap: var(--space-xl);
+  }
+
+  /* Grid serviço detalhe: mantém 2 colunas */
+  .servico-detalhe {
+    gap: var(--space-xl);
+  }
+
+  /* MVV: 3 colunas para 2 colunas */
+  .mvv-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Diferenciais: 4 colunas para 2 colunas */
+  .diferenciais-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer: 4 colunas para 2 colunas */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contato cards: 2 colunas */
+  .contato-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ----------------------------------------
+   Mobile Grande (768px)
+   ---------------------------------------- */
+@media (max-width: 768px) {
+  /* Container ajusta padding */
+  .container {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  /* Grid de orçamento: empilha para 1 coluna */
+  .orcamento-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  /* Grid de contato: empilha para 1 coluna */
+  .contato-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  /* Grid sobre: empilha para 1 coluna */
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Grid serviço detalhe: empilha para 1 coluna */
+  .servico-detalhe {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Serviço detalhe reverse: ordena corretamente */
+  .servico-detalhe.service-detail-reverse .service-detail-image {
+    order: -1;
+  }
+
+  /* MVV: empilha para 1 coluna */
+  .mvv-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Diferenciais: empilha para 1 coluna */
+  .diferenciais-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Footer: empilha para 1 coluna */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  /* Contato cards: empilha para 1 coluna */
+  .contato-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Processo steps: empilha para coluna */
+  .processo-steps {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .processo-step::after {
+    display: none;
+  }
+
+  /* CTA actions: empilha botões */
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Page hero ajusta padding */
+  .page-hero {
+    padding-top: calc(var(--space-2xl) + 60px);
+    padding-bottom: var(--space-xl);
+  }
+
+  /* Menu mobile */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-primary);
+    border-left: 1px solid rgba(74, 85, 104, 0.3);
+    padding: calc(var(--space-xl) + 60px) var(--space-md) var(--space-md);
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .main-nav.menu-open {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .nav-link {
+    display: block;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(74, 85, 104, 0.2);
+  }
+
+  /* Menu toggle visível */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+  }
+
+  .menu-toggle .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-light);
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.active .hamburger:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active .hamburger:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .hamburger:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Header CTA escondido no mobile */
+  .header-cta {
+    display: none;
+  }
+
+  /* Body com scroll bloqueado quando menu aberto */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+/* ----------------------------------------
+   Mobile Pequeno (480px)
+   ---------------------------------------- */
+@media (max-width: 480px) {
+  /* Espaçamentos reduzidos */
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  /* Cards em padding menor */
+  .info-card,
+  .contato-card,
+  .mvv-card,
+  .diferencial-card {
+    padding: var(--space-sm);
+  }
+
+  /* CTA box padding menor */
+  .cta-box {
+    padding: var(--space-lg);
+  }
+
+  /* Formulário padding menor */
+  .orcamento-form-wrapper {
+    padding: var(--space-md);
+  }
+
+  /* Page title menor */
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  /* Section title menor */
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  /* Mapa altura reduzida */
+  .contato-map iframe {
+    height: 300px;
+  }
+
+  /* Footer bottom em coluna */
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  /* WhatsApp float ajusta tamanho */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: var(--space-sm);
+    right: var(--space-sm);
+  }
+
+  /* Hero stats em coluna */
+  .hero-stats {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* Grid de galeria em coluna */
+  .gallery-preview {
+    grid-template-columns: 1fr;
+  }
+
+  /* Services grid em coluna */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Valores list fonte menor */
+  .valores-list li {
+    font-size: 0.85rem;
+  }
+
+  /* Horario list em coluna */
+  .horario-list li {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}

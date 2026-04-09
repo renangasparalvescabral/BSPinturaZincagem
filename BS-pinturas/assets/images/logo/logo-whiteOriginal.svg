@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" role="img">
+  <title>BS Pinturas - Eletrostática, Líquida e Jateamento</title>
+  <desc>Logo oficial BS Pinturas - versão footer fundo escuro</desc>
+
+  <!-- Ícone BS vermelho -->
+  <rect x="0" y="4" width="52" height="52" fill="#CC1111" rx="8"/>
+  <text x="26" y="41" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="24" font-weight="900" fill="#FFFFFF">BS</text>
+
+  <!-- Texto PINTURAS branco -->
+  <text x="62" y="38" text-anchor="start" font-family="Arial Narrow, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" letter-spacing="1">PINTURAS</text>
+
+  <!-- Subtítulo branco suave -->
+  <text x="63" y="54" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#AAAAAA">Eletrostática, Líquida e Jateamento</text>
+
+</svg>

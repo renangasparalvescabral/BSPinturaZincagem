@@ -1,0 +1,748 @@
+/* ========================================
+   BS Pinturas - Componentes Reutilizáveis
+   ======================================== */
+
+/* ----------------------------------------
+   Page Hero (Hero interno das páginas secundárias)
+   ---------------------------------------- */
+.page-hero {
+  position: relative;
+  padding-top: calc(var(--space-3xl) + 80px);
+  padding-bottom: var(--space-2xl);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    rgba(26, 26, 26, 0.95) 50%,
+    rgba(74, 85, 104, 0.3) 100%
+  );
+  border-bottom: 1px solid rgba(74, 85, 104, 0.3);
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234A5568' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+/* Page Tag (label acima do título) */
+.page-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(212, 134, 10, 0.1);
+  border-left: 3px solid var(--color-accent);
+}
+
+/* Page Title (título da página) */
+.page-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-light);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.page-title .text-accent {
+  color: var(--color-accent);
+}
+
+/* Page Description (descrição opcional abaixo do título) */
+.page-description {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-steel);
+  max-width: 600px;
+}
+
+/* ----------------------------------------
+   Orçamento - Layout e Cards de Informação
+   ---------------------------------------- */
+
+/* Wrapper principal do layout (colunas lado a lado) */
+.orcamento-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* Coluna de informações (cards) */
+.orcamento-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Wrapper do formulário */
+.orcamento-form-wrapper {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(74, 85, 104, 0.3);
+  border-radius: 4px;
+  padding: var(--space-xl);
+}
+
+/* Card de informação */
+.info-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(74, 85, 104, 0.3);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 4px;
+  padding: var(--space-md);
+}
+
+.info-card p {
+  color: var(--color-steel);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Título do card */
+.info-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-light);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* Lista de informações */
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  color: var(--color-steel);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: var(--space-xs);
+}
+
+.info-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* Link WhatsApp */
+.info-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  padding: 0.5rem 1rem;
+  background-color: rgba(34, 178, 34, 0.1);
+  border: 1px solid rgba(34, 178, 34, 0.3);
+  border-radius: 4px;
+  color: #22b222;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.info-whatsapp::before {
+  content: '💬';
+}
+
+.info-whatsapp:hover {
+  background-color: rgba(34, 178, 34, 0.2);
+  border-color: #22b222;
+}
+
+/* ----------------------------------------
+   Contato - Layout, Cards e Mapa
+   ---------------------------------------- */
+
+/* Wrapper principal da página de contato */
+.contato-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* Grid de cards de contato */
+.contato-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+/* Card individual de contato */
+.contato-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(74, 85, 104, 0.3);
+  border-radius: 4px;
+  padding: var(--space-md);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contato-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Ícone do card */
+.contato-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Título do card */
+.contato-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-light);
+  margin-bottom: var(--space-sm);
+}
+
+/* Detalhes do contato */
+.contato-detail {
+  color: var(--color-steel);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-sm);
+}
+
+.contato-detail a {
+  color: var(--color-steel);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contato-detail a:hover {
+  color: var(--color-accent);
+}
+
+/* Endereço no card */
+.contato-address {
+  font-style: normal;
+  color: var(--color-steel);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.contato-address p {
+  margin: 0;
+}
+
+/* Lista de horários */
+.horario-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.horario-list li {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-steel);
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(74, 85, 104, 0.2);
+}
+
+.horario-list li:last-child {
+  border-bottom: none;
+}
+
+.horario-list span:first-child {
+  font-weight: 500;
+}
+
+/* Wrapper do mapa */
+.contato-map {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(74, 85, 104, 0.3);
+}
+
+.contato-map iframe {
+  width: 100%;
+  height: 450px;
+  display: block;
+}
+
+/* ----------------------------------------
+   Sobre - História, MVV e Diferenciais
+   ---------------------------------------- */
+
+/* Seção de história */
+.sobre-historia {
+  margin-bottom: var(--space-2xl);
+}
+
+/* Grid de layout da história (imagem + texto) */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+/* Grid de Missão, Visão e Valores */
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+/* Card de MVV */
+.mvv-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(74, 85, 104, 0.3);
+  border-radius: 4px;
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.mvv-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+/* Ícone MVV */
+.mvv-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Título MVV */
+.mvv-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-light);
+  margin-bottom: var(--space-sm);
+}
+
+/* Texto MVV */
+.mvv-text {
+  color: var(--color-steel);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Lista de valores */
+.valores-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.valores-list li {
+  color: var(--color-steel);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(74, 85, 104, 0.2);
+}
+
+.valores-list li:last-child {
+  border-bottom: none;
+}
+
+.valores-list strong {
+  color: var(--color-light);
+}
+
+/* Lista de estrutura/equipamentos */
+.estrutura-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0;
+}
+
+.estrutura-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(74, 85, 104, 0.2);
+}
+
+.estrutura-item:last-child {
+  border-bottom: none;
+}
+
+.estrutura-icon {
+  color: var(--color-accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.estrutura-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.estrutura-text strong {
+  color: var(--color-light);
+  font-size: 1rem;
+}
+
+.estrutura-text span {
+  color: var(--color-steel);
+  font-size: 0.9rem;
+}
+
+/* Grid de diferenciais/certificações */
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+/* Card de diferencial */
+.diferencial-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(74, 85, 104, 0.3);
+  border-radius: 4px;
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.diferencial-card:hover {
+  border-color: var(--color-accent);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Ícone do diferencial */
+.diferencial-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Título do diferencial */
+.diferencial-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-light);
+  margin-bottom: var(--space-xs);
+}
+
+/* Texto do diferencial */
+.diferencial-text {
+  color: var(--color-steel);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ----------------------------------------
+   Serviços - Detalhes e Processos
+   ---------------------------------------- */
+
+/* Wrapper do serviço detalhado (imagem + conteúdo) */
+.servico-detalhe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* Header do serviço (número + título) */
+.servico-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+/* Número do serviço */
+.servico-numero {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(212, 134, 10, 0.1);
+  border: 1px solid rgba(212, 134, 10, 0.3);
+  border-radius: 4px;
+}
+
+/* Ícone grande do serviço */
+.servico-icon-grande {
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-md);
+  color: var(--color-accent);
+}
+
+.servico-icon-grande svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Lista de aplicações do serviço */
+.servico-aplicacoes {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0;
+}
+
+.servico-aplicacoes li {
+  color: var(--color-steel);
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid rgba(74, 85, 104, 0.2);
+}
+
+.servico-aplicacoes li:last-child {
+  border-bottom: none;
+}
+
+.servico-aplicacoes li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Seção de processo do serviço */
+.servico-processo {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(74, 85, 104, 0.3);
+}
+
+/* Grid de steps do processo */
+.processo-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  position: relative;
+}
+
+/* Step individual do processo */
+.processo-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.processo-step::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-accent), transparent);
+  opacity: 0.3;
+}
+
+.processo-step:last-child::after {
+  display: none;
+}
+
+/* Número do step */
+.processo-numero {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background-color: rgba(212, 134, 10, 0.1);
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+}
+
+/* Título do step */
+.processo-titulo {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-light);
+  margin-bottom: var(--space-xs);
+}
+
+/* Descrição do step */
+.processo-descricao {
+  font-size: 0.85rem;
+  color: var(--color-steel);
+  line-height: 1.5;
+}
+
+/* ----------------------------------------
+   CTA Box (Call to Action)
+   ---------------------------------------- */
+
+/* Container do CTA */
+.cta-box {
+  background: linear-gradient(
+    135deg,
+    rgba(178, 34, 34, 0.1) 0%,
+    rgba(26, 26, 26, 0.8) 50%,
+    rgba(212, 134, 10, 0.1) 100%
+  );
+  border: 1px solid rgba(74, 85, 104, 0.3);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: 4px;
+  padding: var(--space-2xl);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Título do CTA */
+.cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-light);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Texto do CTA */
+.cta-text {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--color-steel);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Container dos botões de ação */
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* ----------------------------------------
+   Badges, Tags e Títulos de Seção
+   ---------------------------------------- */
+
+/* Badge genérico */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  background-color: rgba(212, 134, 10, 0.1);
+  color: var(--color-accent);
+  border: 1px solid rgba(212, 134, 10, 0.3);
+}
+
+/* Tag genérica */
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  background-color: rgba(74, 85, 104, 0.3);
+  color: var(--color-steel);
+  border-radius: 2px;
+}
+
+/* Tag de seção (label acima do título) */
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+  padding: 0.25rem 0;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* Título de seção */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-light);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+}
+
+.section-title.center {
+  text-align: center;
+}
+
+/* Subtítulo de seção */
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 400;
+  color: var(--color-steel);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+}
