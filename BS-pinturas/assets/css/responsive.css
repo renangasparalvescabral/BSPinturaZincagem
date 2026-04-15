@@ -22,8 +22,14 @@
   }
 
   /* Grid serviço detalhe: mantém 2 colunas */
-  .servico-detalhe {
+  .servico-detalhe,
+  .service-detail-wrapper {
     gap: var(--space-xl);
+  }
+
+  .service-detail-image img {
+    max-width: 100%;
+    height: 300px;
   }
 
   /* MVV: 3 colunas para 2 colunas */
@@ -33,6 +39,11 @@
 
   /* Diferenciais: 4 colunas para 2 colunas */
   .diferenciais-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Gallery preview: 4 colunas para 2 colunas */
+  .gallery-preview {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -76,9 +87,25 @@
   }
 
   /* Grid serviço detalhe: empilha para 1 coluna */
-  .servico-detalhe {
+  .servico-detalhe,
+  .service-detail-wrapper {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+  }
+
+  /* Serviço detalhe: em mobile, conteúdo primeiro, imagem depois */
+  .service-detail-content {
+    order: 1;
+  }
+
+  .service-detail-image {
+    order: 2;
+    justify-content: center;
+  }
+
+  .service-detail-image img {
+    max-width: 100%;
+    height: 280px;
   }
 
   /* Serviço detalhe reverse: ordena corretamente */
@@ -96,6 +123,16 @@
   .diferenciais-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  /* Gallery preview: 2 colunas para tablets */
+  .gallery-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Diferenciais image: ajusta tamanho em tablets */
+  .diferenciais-image img {
+    max-width: 75%;
   }
 
   /* Footer: empilha para 1 coluna */
@@ -272,6 +309,11 @@
   /* Grid de galeria em coluna */
   .gallery-preview {
     grid-template-columns: 1fr;
+  }
+
+  /* Diferenciais image: ajusta para mobile */
+  .diferenciais-image img {
+    max-width: 90%;
   }
 
   /* Services grid em coluna */

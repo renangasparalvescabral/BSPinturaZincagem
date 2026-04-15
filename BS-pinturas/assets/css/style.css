@@ -93,10 +93,22 @@ input, textarea, select {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)), url('../images/hero/header-bg.jpg');
+  background-image: url('../images/hero/header-bg - Copia.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom: 1px solid rgba(74, 85, 104, 0.3);
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 26, 26, 0.7);
+  z-index: -1;
 }
 
 .header-wrapper {
@@ -515,7 +527,11 @@ input, textarea, select {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/hero/hero-bg.jpg') center/cover no-repeat;
+  background-image: url('../images/hero/hero-bg.jpg');
+  background-size: cover;
+  background-position: 70% center;
+  background-repeat: no-repeat;
+  animation: heroZoom 15s ease-in-out infinite;
 }
 
 .hero-overlay {
@@ -630,6 +646,19 @@ input, textarea, select {
   }
 }
 
+/* Animação suave de zoom no hero - efeito Ken Burns */
+@keyframes heroZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* ========================================
    Cards de Serviços
    ======================================== */
@@ -723,6 +752,236 @@ input, textarea, select {
 }
 
 /* ========================================
+   Página de Serviços - Detalhes
+   ======================================== */
+
+.service-detail-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.service-detail-content {
+  order: 1;
+  padding-left: var(--space-lg);
+}
+
+.service-detail-image {
+  order: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.service-detail-image img {
+  width: 100%;
+  max-width: 650px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Imagem do Teflon - sem corte, proporcional */
+#revestimento-teflon .service-detail-image img {
+  object-fit: contain;
+  max-height: 420px;
+  height: auto;
+}
+
+/* Imagens de Jateamento e Pintura Eletrostática - sem cortes */
+#jateamento .service-detail-image img,
+#pintura-eletrostatica .service-detail-image img {
+  object-fit: contain;
+  max-height: 420px;
+  height: auto;
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.service-number {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(212, 134, 10, 0.1);
+  border: 1px solid rgba(212, 134, 10, 0.3);
+  border-radius: 4px;
+}
+
+.service-detail-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-light);
+  line-height: 1.2;
+}
+
+.service-lead {
+  font-size: 1.1rem;
+  color: var(--color-steel);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
+.service-info {
+  margin-bottom: var(--space-md);
+}
+
+.service-info-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-light);
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+}
+
+.service-info p {
+  color: var(--color-steel);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.service-aplicacoes {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0;
+}
+
+.service-aplicacoes li {
+  color: var(--color-steel);
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid rgba(74, 85, 104, 0.2);
+}
+
+.service-aplicacoes li:last-child {
+  border-bottom: none;
+}
+
+.service-aplicacoes li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Responsivo - Serviços Detalhados */
+@media (max-width: 1024px) {
+  .service-detail-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .service-detail-image img {
+    max-width: 100%;
+    height: 380px;
+  }
+
+  #revestimento-teflon .service-detail-image img,
+  #jateamento .service-detail-image img,
+  #pintura-eletrostatica .service-detail-image img {
+    max-height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-detail-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .service-detail-content {
+    order: 1;
+    padding-left: 0;
+  }
+
+  .service-detail-image {
+    order: 2;
+    justify-content: center;
+  }
+
+  .service-detail-image img {
+    max-width: 100%;
+    height: 320px;
+  }
+
+  #revestimento-teflon .service-detail-image img,
+  #jateamento .service-detail-image img,
+  #pintura-eletrostatica .service-detail-image img {
+    max-height: 320px;
+  }
+}
+
+/* ========================================
+   Seção Sobre - Nossa História
+   ======================================== */
+
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-left: var(--space-lg);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Responsivo - Sobre */
+@media (max-width: 1024px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .about-image {
+    order: -1;
+    margin-left: 0;
+  }
+
+  .about-image img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-image img {
+    max-height: 300px;
+  }
+}
+
+/* ========================================
    Seção de Diferenciais
    ======================================== */
 
@@ -787,24 +1046,17 @@ input, textarea, select {
 
 .diferenciais-image {
   position: relative;
-}
-
-.diferenciais-image::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: -20px;
-  width: 100%;
-  height: 100%;
-  border: 2px solid var(--color-accent);
-  border-radius: 8px;
-  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .diferenciais-image img {
+  width: 100%;
+  max-width: 85%;
+  height: auto;
   border-radius: 8px;
-  position: relative;
-  z-index: 1;
+  border: 3px solid #d4af37;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -872,6 +1124,80 @@ input, textarea, select {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--space-md);
+}
+
+/* Gallery Preview - Home Page */
+.gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.gallery-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-preview .gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  margin: 0;
+}
+
+.gallery-preview .gallery-item::after {
+  content: 'Ver serviço →';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-light);
+  background-color: rgba(212, 134, 10, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.gallery-preview .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item-link:hover .gallery-item img {
+  transform: scale(1.1);
+}
+
+.gallery-item-link:hover .gallery-item::after {
+  opacity: 1;
+}
+
+.gallery-preview .gallery-item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-sm);
+  background: linear-gradient(transparent 0%, rgba(26, 26, 26, 0.95) 100%);
+  color: var(--color-light);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 1;
 }
 
 .gallery-item {
@@ -1535,6 +1861,10 @@ input, textarea, select {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .hero-bg {
+    animation: none;
   }
 }
 

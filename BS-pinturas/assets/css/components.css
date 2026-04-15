@@ -482,8 +482,18 @@
 .servico-detalhe {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: start;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.servico-detalhe img {
+  width: 100%;
+  max-width: 450px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  justify-self: end;
 }
 
 /* Header do serviço (número + título) */
